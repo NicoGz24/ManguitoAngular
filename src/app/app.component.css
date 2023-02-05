@@ -1,0 +1,77 @@
+
+
+.nav_header{
+    width: 100%;
+    height: 95px;
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav_logo{
+    /*background-color: darkgray; */
+    width: 50%;
+    justify-content: left;
+}
+
+.nav_buttons{
+   /* background-color: chartreuse;*/
+    width: 50%;
+    height: 70px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+.section_carrusel{
+    width: 100%;
+    height: 500px;
+    /*background-color: aquamarine;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    width: 100%;
+    height: 400px;
+   /* background-color: coral; */
+    display: flex;
+    align-items: center;
+    padding: auto;
+}
+
+.section_registrarse{
+/* background-color: burlywood; */
+ width: 50%;
+}
+
+.imagen_main{
+    display: flex;
+    justify-content: center;
+    float: right;
+}
+
+.tabla{
+   /* background-color: brown; */
+    width: 50%;
+}
+.section_categorias{
+    width: 100%;
+    height: 70px;
+   /* background-color:cornflowerblue;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_nav{
+    width: 100%;
+    height: 50px;
+    background-color:burlywood;
+    display: flex;
+    align-items: flex-end;
+}
+
