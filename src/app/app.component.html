@@ -5,10 +5,9 @@
     <img src="../assets/logos/ManguitoLogo2.png" width="20%" height="100px">
   </div>  
   <div class="nav_buttons">
-      <button class="btn btn-outline-success me-md-2" style="background-color: rgb(253, 246, 237);" type="button">iniciar sesion</button>
-      <button class="btn btn-outline-success me-md-2" style="background-color: rgb(253, 246, 237);" type="button">mi perfil</button>
+      <button (click)= "Login()"  class="btn btn-outline-success me-md-2" style="background-color: rgb(253, 246, 237);" type="button">iniciar sesion</button>
       <input class="form-control me-2" type="search" placeholder="Emprendimiento" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Buscar</button>
+      <button (click)="VerEmprendimiento()" class="btn btn-outline-success" type="submit">Buscar</button>
   </div>
 </nav>
 
@@ -125,48 +124,24 @@
       Compartila con el resto del mundo, animate!
     </div>
     <br>
-    <button class="btn btn-outline-success" style="margin: 10%;">¡Registrate!</button>
+    <button (click)="AltaUsuario()" class="btn btn-outline-success" style="margin: 10%;">¡Registrate!</button>
   </section>
-  <aside class="tabla">
-    <div class="container">
-      <div class="card">
-          <div class="card-head">
-              <h3>Top Emprendimientos</h3>
-          </div>
-          <div class="card-body">
-              <table class="table table-hover">
-                  <thead>
-                      <tr class="text-center">
-                          <th>Nombre</th>
-                          <th>Manguitos</th>
-                          <th>Categoria</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr class="text-center">
-                          <td>emprendimiento.nombre</td>
-                          <td>emprendimiento.manguitos</td>
-                          <td>emprendimiento.categoria</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>
-      </div>
-  </div>
+  <aside class="tabla">  
+      <app-listar-emprendimientos></app-listar-emprendimientos>
   </aside>
 </main>
 
 <section class="section_categorias">
   <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-primary">ONGs</button>
-    <button type="button" class="btn btn-primary">Salud</button>
-    <button type="button" class="btn btn-primary">Arte</button>
-    <button type="button" class="btn btn-primary">Mascotas</button>
-    <button type="button" class="btn btn-primary">Gastronomia</button>
-    <button type="button" class="btn btn-primary">Ciencia</button>
-    <button type="button" class="btn btn-primary">Nutricion</button>
-    <button type="button" class="btn btn-primary">Redes Sociales</button>
-    <button type="button" class="btn btn-primary">Delicatessen</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">ONGs</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">Salud</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">Arte</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">Mascotas</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">Gastronomia</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">Ciencia</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">Nutricion</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">Redes Sociales</button>
+    <button (click)="VerCategoria()" type="button" class="btn btn-primary">Delicatessen</button>
   </div>
 </section>
 

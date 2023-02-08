@@ -1,0 +1,27 @@
+
+    <div class="container">
+      <div class="card">
+          <div class="card-head">
+              <h3>Top Emprendimientos</h3>
+          </div>
+          <div class="card-body">
+              <table class="table table-hover">
+                  <thead>
+                      <tr class="text-center">
+                          <th>Nombre</th>
+                          <th>Manguitos</th>
+                          <th>Descripcion</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let emprendimiento of emprendimientos " class="text-center">
+                          <td>{{emprendimiento.nombre}}</td>
+                          <td>emprendimiento.manguitos</td>
+                          <td>{{emprendimiento.descripcion}}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+ 

@@ -3,24 +3,47 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AgregarComponent } from './Usuario/agregar/agregar.component';
-import { EditarComponent } from './Usuario/editar/editar.component';
-import { EliminarComponent } from './Usuario/eliminar/eliminar.component';
-import { ListarComponent } from './Usuario/listar/listar.component';
+import { ListarUsuariosComponent } from './Usuario/listar-usuarios/listar-usuarios.component';
+import { AltaUsuarioComponent } from './Usuario/alta-usuario/alta-usuario.component';
+import { EditarUsuarioComponent } from './Usuario/editar-usuario/editar-usuario.component';
+import { LoginComponent } from './Usuario/login/login.component';
+import { ListarEmprendimientosComponent } from './Emprendimiento/listar-emprendimientos/listar-emprendimientos.component';
+import { EditarEmprendimientoComponent } from './Emprendimiento/editar-emprendimiento/editar-emprendimiento.component';
+import { EliminarEmprendimientoComponent } from './Emprendimiento/eliminar-emprendimiento/eliminar-emprendimiento.component';
+import { NuevoEmprendimientoComponent } from './Usuario/nuevo-emprendimiento/nuevo-emprendimiento.component';
+import { AltaCategoriaComponent } from './Categoria/alta-categoria/alta-categoria.component';
+import { EditarCategoriaComponent } from './Categoria/editar-categoria/editar-categoria.component';
+import { EliminarCategoriaComponent } from './Categoria/eliminar-categoria/eliminar-categoria.component';
+import { VerCategoriaComponent } from './Categoria/ver-categoria/ver-categoria.component';
+import { VerEmprendimientoComponent } from './Emprendimiento/ver-emprendimiento/ver-emprendimiento.component';
+import{FormsModule} from '@angular/forms';
+import { ServicioService } from './Service/servicio.service';
+import{HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AppComponent,
-    AgregarComponent,
-    EditarComponent,
-    EliminarComponent,
-    ListarComponent
+    ListarUsuariosComponent,
+    AltaUsuarioComponent,
+    EditarUsuarioComponent,
+    LoginComponent,
+    ListarEmprendimientosComponent,
+    EditarEmprendimientoComponent,
+    EliminarEmprendimientoComponent,
+    NuevoEmprendimientoComponent,
+    AltaCategoriaComponent,
+    EditarCategoriaComponent,
+    EliminarCategoriaComponent,
+    VerCategoriaComponent,
+    VerEmprendimientoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
