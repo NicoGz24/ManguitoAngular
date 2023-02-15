@@ -1,1 +1,62 @@
-<p>ver-emprendimiento works!</p>
+<nav class="nav_header">
+    <div class="nav_logo">
+      <img [routerLink]="['']" src="../assets/logos/ManguitoLogo2.png" width="20%" height="100px">
+    </div>  
+</nav>
+
+<div class="div_titulo">
+  <h1>Titulo emprendimiento</h1>
+</div>
+
+<main class="main_principal">
+  <section class="section_imagen_empre">
+    <img  style="margin-left: 350px;" src="https://tecolotito.elsiglodetorreon.com.mx/i/2021/04/1420928.jpeg">
+  </section>
+  <aside class="aside_recaudacion">
+      <button style="margin-top: 10px;" class="btn btn-outline-success me-md-2">Posteos</button>
+      <div class="tabla_donaciones">
+        <app-ver-donaciones></app-ver-donaciones>
+      </div>
+      <button (click)="DonarManguitos()" style="margin-bottom: 10px;" class="btn btn-outline-success me-md-2">Donar Manguitos</button>
+      <button style="margin-bottom: 10px;" class="btn btn-outline-success me-md-2">Ver planes disponibles</button>
+      <div>
+        Valor del Manguito 
+        <input type="text" value="$500" aria-label="readonly input example" readonly>
+      </div>
+  </aside>
+  
+</main>
+
+<main class="main_descrip_empre">
+  <section class="section_descrip_empre">
+    <div>
+      <p>Datalists allow you to create a group of s that can be accessed (and autocompleted) from within an. These are similar to  elements, but come with more menu styling limitations and differences. While most browsers and operating systems include some support for  elements, their styling is inconsistent at best.Datalists allow you to create a group of s that can be accessed (and autocompleted) from within an. These are similar to  elements, but come with more menu styling limitations and differences. While most browsers and operating systems include some support for  elements, their styling is inconsistent at best.</p>
+    </div>
+    
+  </section>
+</main>
+
+
+
+
+
+
+<section class="section_categorias">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button *ngFor="let categoria of categorias" type="button" class="btn btn-primary">{{categoria.nombre}}</button>
+    </div>
+  </section>
+  
+  <footer class="footer_nav">
+    <ul class="nav justify-content-end">
+      <li >
+        <a class="nav-link active" aria-current="page" href="#">Instragram</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Facebook</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link ">Twitter</a>
+      </li>
+    </ul>
+  </footer>

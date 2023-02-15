@@ -10,9 +10,19 @@ import { Usuario } from 'src/app/Modelo/Usuario';
 })
 export class LoginComponent {
   
-  usuario:Usuario;
-  
-  constructor(private service:ServicioService, private router:Router){}
+  usuario:Usuario=new Usuario();
+  nombreUsuario:string;
+  password:string;
+  constructor(private service:ServicioService, private router:Router){
+  }
   
   ngOnInit(){}
+
+
+  IniciarSesion(){
+    this.service.loginUsuario(this.nombreUsuario,this.password).subscribe(data=>{this.usuario = data});
+    console.log("datos del usuario "+ this.usuario.nombre);
+    this.router.navigate(["panelAdministrador"]);
+  }
+
 }

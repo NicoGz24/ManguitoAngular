@@ -18,7 +18,13 @@ import { VerCategoriaComponent } from './Categoria/ver-categoria/ver-categoria.c
 import { VerEmprendimientoComponent } from './Emprendimiento/ver-emprendimiento/ver-emprendimiento.component';
 import{FormsModule} from '@angular/forms';
 import { ServicioService } from './Service/servicio.service';
-import{HttpClientModule} from '@angular/common/http'
+import{HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { VerDonacionesComponent } from './Emprendimiento/ver-donaciones/ver-donaciones.component';
+import { DonarManguitosComponent } from './Usuario/donar-manguitos/donar-manguitos.component';
+import { ComprarPlanComponent } from './Usuario/comprar-plan/comprar-plan.component';
+import { PanelAdministradorComponent } from './Usuario/panel-administrador/panel-administrador.component';
+import { NavbarComponent } from './navbar/navbar.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +41,13 @@ import{HttpClientModule} from '@angular/common/http'
     EditarCategoriaComponent,
     EliminarCategoriaComponent,
     VerCategoriaComponent,
-    VerEmprendimientoComponent
+    VerEmprendimientoComponent,
+    HomeComponent,
+    VerDonacionesComponent,
+    DonarManguitosComponent,
+    ComprarPlanComponent,
+    PanelAdministradorComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

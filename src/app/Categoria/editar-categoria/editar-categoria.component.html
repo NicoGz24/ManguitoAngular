@@ -1,1 +1,12 @@
-<p>editar-categoria works!</p>
+<app-navbar></app-navbar>
+
+<h1 style="text-align: center; padding: 2%; font-family: cursive;" >{{categoria.nombre}}</h1>
+
+<div class="container">
+    <img src={{categoria.imagen}} class="card-img-top" alt="...">
+    <h5>Ingrese la url de la nueva imagen</h5>
+    <input class="form-control me-2" type="text" placeholder="url_imagen" name="url_imagen" >
+    <h5>Descripcion</h5>
+    <input class="form-control me-2"type="text" placeholder={{categoria.descripcion}} descripcion="url_imagen">
+    <button class="btn btn-primary" style="align-content: center; margin-top: 10px;">Guardar cambios</button>
+</div>

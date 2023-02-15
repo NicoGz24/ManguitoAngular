@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card">
+        <div class="card-head">
+            <h5>Donaciones a la fecha</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>Manguitos</th>
+                        <th>Planes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let donacion " class="text-center">
+                        <td>{{donacion.cantiManguitos}}</td>
+                        <td>{{donacion.cantPlanes}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
