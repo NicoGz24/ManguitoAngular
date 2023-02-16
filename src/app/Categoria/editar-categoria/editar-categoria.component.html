@@ -4,9 +4,13 @@
 
 <div class="container">
     <img src={{categoria.imagen}} class="card-img-top" alt="...">
-    <h5>Ingrese la url de la nueva imagen</h5>
-    <input class="form-control me-2" type="text" placeholder="url_imagen" name="url_imagen" >
+    <h5>Url de la portada</h5>
+    <input class="form-control me-2" [(ngModel)]="categoria.imagen" type="text" placeholder="url_imagen" name="url_imagen" >
+    <h5>Nombre de la categoria</h5>
+    <input  class="form-control me-2"type="text" [(ngModel)]="categoria.nombre" placeholder='nombre ' name="nombre">
     <h5>Descripcion</h5>
-    <input class="form-control me-2"type="text" placeholder={{categoria.descripcion}} descripcion="url_imagen">
+    <input class="form-control me-2"type="text" [(ngModel)]="categoria.descripcion" placeholder='descripcion ' name="descripcion">
     <button class="btn btn-primary" style="align-content: center; margin-top: 10px;">Guardar cambios</button>
 </div>
+
+<app-footer></app-footer>

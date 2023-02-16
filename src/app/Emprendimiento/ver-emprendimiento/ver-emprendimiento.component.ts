@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Categoria } from '../../Modelo/Categoria';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import{ServicioService} from '../../Service/servicio.service';
 import { Emprendimiento } from 'src/app/Modelo/Emprendimiento';
 
@@ -13,15 +13,15 @@ import { Emprendimiento } from 'src/app/Modelo/Emprendimiento';
 export class VerEmprendimientoComponent {
   categorias: Categoria[];
   emprendimiento: any;
-  nombreEmprendimiento:String;
+  nombreEmprendimiento:any;
 
-  constructor(private router:Router,private service:ServicioService){
+  constructor(private router:Router,private service:ServicioService, private route: ActivatedRoute){
     this.service.getCategorias().subscribe(data=>{this.categorias=data})
   }
 
   ngOnInit(){
-    this.service.dataOutput.subscribe(data=>{this.nombreEmprendimiento = data})
-    console.log("Nombre",this.nombreEmprendimiento)
+    this.route.paramMap.subscribe(params => {this.nombreEmprendimiento = params.get('nombre')})
+    this.service.getEmprendimientoNombre(this.nombreEmprendimiento).subscribe(data=>{this.emprendimiento = data})
   }
    
   DonarManguitos(){

@@ -17,7 +17,10 @@ export class PanelAdministradorComponent {
 
 
   EditarCategoria(categoria:Categoria){
-    this.service.dataOutput.emit(categoria);
-    this.router.navigate(['editarCategoria']);
+    this.router.navigate(['editarCategoria',categoria.nombre]);
+  }
+
+  AltaCategoria(){
+    this.router.navigate(['altaCategoria']);
   }
 }

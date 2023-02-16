@@ -1,1 +1,17 @@
-<p>alta-categoria works!</p>
+<app-navbar></app-navbar>
+
+<h1 style="text-align: center; padding: 2%; font-family: cursive;" >Datos de la nueva Categoria</h1>
+<div class="container">
+    <h4 style="margin-left: 200px;">Portada</h4>
+    <img src={{categoria.imagen}} class="card-img-top" alt="...imagen no encontrada">
+    <h5>Ingrese la url de la imagen que utilizara como portada</h5>
+    <input class="form-control me-2" [(ngModel)]="categoria.imagen" type="text" placeholder="url_imagen" name="url_imagen" >
+    <br>
+    <h5>Nombre de la nueva categoria</h5>
+    <input  class="form-control me-2"type="text" [(ngModel)]="categoria.nombre" placeholder='nombre ' name="nombre">
+    <h5>Escriba una breve descripcion</h5>
+    <input class="form-control me-2"type="text" [(ngModel)]="categoria.descripcion" placeholder='descripcion ' name="descripcion">
+    <button (click)="AltaCategoria(categoria)" class="btn btn-primary" style="align-content: center; margin-top: 10px;">Guardar cambios</button>
+</div>
+
+<app-footer></app-footer>

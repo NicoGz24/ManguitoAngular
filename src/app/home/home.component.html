@@ -11,7 +11,7 @@
     </div>
   </nav>
   
-  <h1 style="text-align: center; padding: 5%; font-family: cursive;">Plataforma de financiamiento colectivo</h1>
+  <h1 style="text-align: center; padding: 3%; font-family: cursive;">Plataforma de financiamiento colectivo</h1>
   
   <section class="section_carrusel">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -133,22 +133,10 @@
   
   <section class="section_categorias">
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button (click)="VerCategoria()" *ngFor="let categoria of categorias" type="button" class="btn btn-primary">{{categoria.nombre}}</button>
+      <button (click)="VerCategoria(categoria)" *ngFor="let categoria of categorias" type="button" class="btn btn-primary">{{categoria.nombre}}</button>
     </div>
   </section>
   
-  <footer class="footer_nav">
-    <ul class="nav justify-content-end">
-      <li >
-        <a class="nav-link active" aria-current="page" href="#">Instragram</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Facebook</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link ">Twitter</a>
-      </li>
-    </ul>
-  </footer>
+<app-footer></app-footer>
     
   

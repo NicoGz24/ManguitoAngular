@@ -24,7 +24,8 @@ import { VerDonacionesComponent } from './Emprendimiento/ver-donaciones/ver-dona
 import { DonarManguitosComponent } from './Usuario/donar-manguitos/donar-manguitos.component';
 import { ComprarPlanComponent } from './Usuario/comprar-plan/comprar-plan.component';
 import { PanelAdministradorComponent } from './Usuario/panel-administrador/panel-administrador.component';
-import { NavbarComponent } from './navbar/navbar.component'
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { NavbarComponent } from './navbar/navbar.component'
     DonarManguitosComponent,
     ComprarPlanComponent,
     PanelAdministradorComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

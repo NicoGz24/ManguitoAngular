@@ -24,12 +24,11 @@ export class HomeComponent {
     this.router.navigate(["altaUsuario"])
   }
 
-  VerCategoria(){
-    this.router.navigate(["verCategoria"])
+  VerCategoria(categoria:Categoria){
+    this.router.navigate(["verCategoria",categoria])
   }
 
-  VerEmprendimiento(nombre: string){
-    this.service.dataOutput.emit(nombre)
-    this.router.navigate(["verEmprendimiento"])
+  VerEmprendimiento(nombre: String){
+    this.router.navigate(["verEmprendimiento",nombre])
   }
 }

@@ -9,8 +9,7 @@ import { Categoria } from '../Modelo/Categoria';
 })
 export class ServicioService {
 
-  @Output() dataOutput:EventEmitter<any> = new EventEmitter<any>();
-  
+ 
   constructor(private http:HttpClient) { }
 
   Url='http://localhost:8080/ttps-spring';
@@ -49,6 +48,14 @@ export class ServicioService {
 
   getCategorias(){
     return this.http.get<Categoria[]>(this.Url+"/Categoria/listarCategorias")
+  }
+
+  getCategoriaNombre(nombre:String){
+    return this.http.get<Categoria>(this.Url+"/Categoria/buscarCategoriaPorNombre"+"?nombre="+nombre)
+  }
+
+  altaDeCategoria(categoria:Categoria){
+    return this.http.post<Categoria>(this.Url + "/usuario/altaCategoria",categoria)
   }
 
   getEmprendimientoNombre(nombre:String){

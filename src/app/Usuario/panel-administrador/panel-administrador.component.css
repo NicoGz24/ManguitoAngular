@@ -2,7 +2,8 @@
     height: 450px;
     display: flex;
     align-items: center;
-    /*background-color: brown;*/
+    justify-content: center;
+    background-color: brown;
 }
 
 .card{

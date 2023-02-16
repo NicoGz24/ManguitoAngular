@@ -9,6 +9,7 @@ import { EliminarEmprendimientoComponent } from './Emprendimiento/eliminar-empre
 import { ListarEmprendimientosComponent } from './Emprendimiento/listar-emprendimientos/listar-emprendimientos.component';
 import { VerDonacionesComponent } from './Emprendimiento/ver-donaciones/ver-donaciones.component';
 import { VerEmprendimientoComponent } from './Emprendimiento/ver-emprendimiento/ver-emprendimiento.component';
+import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AltaUsuarioComponent } from './Usuario/alta-usuario/alta-usuario.component';
@@ -24,17 +25,18 @@ const routes: Routes = [
   {path: '', component:HomeComponent},
   {path:'home', component:HomeComponent},
   {path:'navbar',component:NavbarComponent},
+  {path:'footer', component:FooterComponent},
   {path:'listarEmprendimientos', component:ListarEmprendimientosComponent},
   {path:'login', component:LoginComponent},
   {path:'altaUsuario', component:AltaUsuarioComponent},
-  {path:'verEmprendimiento', component:VerEmprendimientoComponent},
-  {path:'verCategoria', component:VerCategoriaComponent},
+  {path:'verEmprendimiento/:nombre', component:VerEmprendimientoComponent},
+  {path:'verCategoria/:categoria', component:VerCategoriaComponent},
   {path:'nuevoEmprendimiento', component:NuevoEmprendimientoComponent},
   {path:'altaCategoria', component:AltaCategoriaComponent},
   {path:'editarUsuario', component:EditarUsuarioComponent},
   {path:'panelAdministrador',component:PanelAdministradorComponent},
   {path:'editarEmprendimiento', component:EditarEmprendimientoComponent},
-  {path:'editarCategoria', component:EditarCategoriaComponent},
+  {path:'editarCategoria/:nombre', component:EditarCategoriaComponent},
   {path:'listarUsuarios', component:ListarUsuariosComponent},
   {path:'eliminarEmprendimiento', component:EliminarEmprendimientoComponent},
   {path:'eliminarCategoria', component:EliminarCategoriaComponent},
