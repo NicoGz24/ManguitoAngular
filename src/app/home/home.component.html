@@ -6,7 +6,7 @@
     </div>  
     <div class="nav_buttons">
         <button (click)= "Login()"  class="btn btn-outline-success me-md-2" style="background-color: rgb(253, 246, 237);" type="button">iniciar sesion</button>
-        <input  #name class="form-control me-2" type="search" placeholder="Emprendimiento" name="nombre" id="nombre" aria-label="Search">
+        <input  #name class="form-control me-2" type="search" placeholder="Emprendimiento" name="nombre" id="nombre" aria-label="Search" required>
         <button (click)="VerEmprendimiento(name.value)" class="btn btn-outline-success" type="submit">Buscar</button>
     </div>
   </nav>

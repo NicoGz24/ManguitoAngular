@@ -58,8 +58,16 @@ export class ServicioService {
     return this.http.post<Categoria>(this.Url + "/usuario/altaCategoria",categoria)
   }
 
+  getEmprendimientoPorIdUsuario(idUsuario:number){
+    return this.http.get<Emprendimiento>(this.Url+"/usuario/recuperarEmprenPorIdUsuario"+"?idUsuario="+idUsuario)
+  }
+
   getEmprendimientoNombre(nombre:String){
     return this.http.get<Emprendimiento>(this.Url+"/Emprendimiento/buscarEmprendimientoNombre"+"?nombre="+nombre)
+  }
+
+  getEmprendimientoPorId(idEmprendimiento:number){
+    return this.http.get<Emprendimiento>(this.Url+"/Emprendimiento/buscarEmprendimiento"+"?idEmprendimiento="+idEmprendimiento)
   }
 
   actualizarCategoria(categoria:Categoria){
@@ -69,5 +77,6 @@ export class ServicioService {
   eliminarCategoria(idCategoria:number){
     return this.http.delete<Categoria>(this.Url+"/Categoria/eliminarCategoria"+"?idCategoria="+idCategoria)
   }
+
 }
 

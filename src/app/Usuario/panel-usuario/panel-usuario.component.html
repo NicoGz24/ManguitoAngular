@@ -1,1 +1,28 @@
-<p>panel-usuario works!</p>
+<app-navbar></app-navbar>
+
+<h1 style="text-align: center; font-family: cursive;">Hola {{usuario.nombre}} </h1>
+
+<div class="container">
+    <div class="card border-dark" >
+        <img  (click)="NuevoEmprendimiento()" src="https://campusdesegovia.uva.es/wp-content/uploads/2020/03/CATEGORIA-DESDE-CASA.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h6 class="card-title" style="text-align: center;">Nuevo Emprendimiento</h6>
+        </div>
+    </div>
+    <div class="card border-dark" >
+        <img (click)="EditarEmprendimiento()" src="https://campusdesegovia.uva.es/wp-content/uploads/2020/03/CATEGORIA-DESDE-CASA.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h6 class="card-title" style="text-align: center;">Editar Emprendimiento</h6>
+        </div>
+    </div>
+    <div class="card border-dark" >
+        <img (click)="EditarPerfil()" src="https://campusdesegovia.uva.es/wp-content/uploads/2020/03/CATEGORIA-DESDE-CASA.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h6 class="card-title" style="text-align: center;" >Editar Perfil</h6>
+        </div>
+    </div>
+</div>
+
+
+
+<app-footer></app-footer>
