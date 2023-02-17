@@ -20,6 +20,7 @@ import { ListarUsuariosComponent } from './Usuario/listar-usuarios/listar-usuari
 import { LoginComponent } from './Usuario/login/login.component';
 import { NuevoEmprendimientoComponent } from './Usuario/nuevo-emprendimiento/nuevo-emprendimiento.component';
 import { PanelAdministradorComponent } from './Usuario/panel-administrador/panel-administrador.component';
+import { PanelUsuarioComponent } from './Usuario/panel-usuario/panel-usuario.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:'nuevoEmprendimiento', component:NuevoEmprendimientoComponent},
   {path:'altaCategoria', component:AltaCategoriaComponent},
   {path:'editarUsuario', component:EditarUsuarioComponent},
+  {path:'panelUsuario' , component:PanelUsuarioComponent},
   {path:'panelAdministrador',component:PanelAdministradorComponent},
   {path:'editarEmprendimiento', component:EditarEmprendimientoComponent},
   {path:'editarCategoria/:nombre', component:EditarCategoriaComponent},

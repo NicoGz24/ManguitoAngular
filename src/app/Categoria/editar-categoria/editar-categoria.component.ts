@@ -10,7 +10,7 @@ import { ServicioService } from 'src/app/Service/servicio.service';
 })
 export class EditarCategoriaComponent {
 
-  categoria:Categoria=new Categoria();
+  categoria:Categoria;
   nombreCategoria:any;
 
   constructor(private router:Router,private service:ServicioService, private route: ActivatedRoute){
@@ -20,6 +20,11 @@ export class EditarCategoriaComponent {
   ngOnInit(){
     this.route.paramMap.subscribe(params =>{this.nombreCategoria = params.get('nombre')})
     this.service.getCategoriaNombre(this.nombreCategoria).subscribe(data =>{this.categoria = data})
-    console.log('data = ',this.categoria.id)
   }
+
+  EditarCategoria(){
+    console.log('nombre = ',this.categoria.nombre)
+    this.service.actualizarCategoria(this.categoria).subscribe(data=>{alert('La categoria fue actualizada con exito')})
+  }
+
 }

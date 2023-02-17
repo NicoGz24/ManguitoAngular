@@ -24,10 +24,6 @@ export class HomeComponent {
     this.router.navigate(["altaUsuario"])
   }
 
-  VerCategoria(categoria:Categoria){
-    this.router.navigate(["verCategoria",categoria])
-  }
-
   VerEmprendimiento(nombre: String){
     this.router.navigate(["verEmprendimiento",nombre])
   }

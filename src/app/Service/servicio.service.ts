@@ -62,5 +62,12 @@ export class ServicioService {
     return this.http.get<Emprendimiento>(this.Url+"/Emprendimiento/buscarEmprendimientoNombre"+"?nombre="+nombre)
   }
 
+  actualizarCategoria(categoria:Categoria){
+    return this.http.put<Categoria>(this.Url+"/Categoria/actualizarCategoria",categoria)
+  }
+
+  eliminarCategoria(idCategoria:number){
+    return this.http.delete<Categoria>(this.Url+"/Categoria/eliminarCategoria"+"?idCategoria="+idCategoria)
+  }
 }
 

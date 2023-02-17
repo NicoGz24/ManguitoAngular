@@ -23,4 +23,9 @@ export class PanelAdministradorComponent {
   AltaCategoria(){
     this.router.navigate(['altaCategoria']);
   }
+
+  EliminarCategoria(categoria:Categoria){
+    this.service.eliminarCategoria(categoria.id).subscribe(data => {alert('Categoria eliminada')})
+    this.router.navigate(['panelAdministrador'])
+  }
 }

@@ -1,7 +1,7 @@
 export class Categoria{
     id:number;
-    nombre:String;
-    descripcion: String;
-    imagen:String;
+    nombre:string;
+    descripcion: string;
+    imagen:string;
     constructor(){}
 }

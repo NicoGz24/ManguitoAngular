@@ -10,7 +10,7 @@ import { ServicioService } from 'src/app/Service/servicio.service';
 })
 export class AltaCategoriaComponent {
 
-  categoria: Categoria = new Categoria;
+  categoria: Categoria = new Categoria();
 
   constructor(private router:Router,private service:ServicioService){
   }

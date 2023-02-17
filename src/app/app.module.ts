@@ -25,7 +25,8 @@ import { DonarManguitosComponent } from './Usuario/donar-manguitos/donar-manguit
 import { ComprarPlanComponent } from './Usuario/comprar-plan/comprar-plan.component';
 import { PanelAdministradorComponent } from './Usuario/panel-administrador/panel-administrador.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { PanelUsuarioComponent } from './Usuario/panel-usuario/panel-usuario.component'
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { FooterComponent } from './footer/footer.component'
     ComprarPlanComponent,
     PanelAdministradorComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PanelUsuarioComponent
   ],
   imports: [
     BrowserModule,

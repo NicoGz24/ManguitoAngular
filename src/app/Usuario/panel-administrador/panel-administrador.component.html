@@ -1,17 +1,17 @@
 <app-navbar></app-navbar>
 <h1 style="text-align: center; padding: 2%; font-family: cursive;" >Administrador de Categorias</h1>
 <div class="container">
-    <div class="card" *ngFor="let categoria of categorias" >
+    <div class="card border-dark" *ngFor="let categoria of categorias" >
         <img src={{categoria.imagen}} class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">{{categoria.nombre}}</h5>
-            <p class="categria-descripcion">{{categoria.descripcion}}</p>
-            <button (click)="EditarCategoria(categoria)" class="btn btn-primary" style="align-content: center;margin-bottom: 10px;">Editar</button>
-            <button class="btn btn-primary" style="align-content: center; ">Eliminar</button>
+            <h6 class="card-title" style="text-align: center;">{{categoria.nombre}}</h6>
+        </div>
+        <div clas="div-button" style="margin-bottom: 5px;">
+            <button (click)="EditarCategoria(categoria)" class="btn btn-primary btn-sm" style="margin-right: 10px; margin-left: 5px;" >Editar</button>
+            <button (click)="EliminarCategoria(categoria)" class="btn btn-danger btn-sm" >Eliminar</button>
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="card" >
         <img  (click)="AltaCategoria()" src= "https://campusdesegovia.uva.es/wp-content/uploads/2020/03/CATEGORIA-DESDE-CASA.jpg"  class="card-img-top" alt="...">

@@ -7,14 +7,14 @@
                 <form action="">
                     <div class="form-group">
                         <label>Nombre de Usuario</label>
-                        <input type="text" class="form-control" [(ngModel)] = "nombreUsuario"name = "nombre" >
+                        <input #nombre type="text" class="form-control" [(ngModel)]="usuario.nombre" name = "nombre" >
                     </div>
                     <div class="form-group">
                         <label>Constraseña</label>
-                        <input  type="text" class="form-control" [(ngModel)] = "password" name = "password">
+                        <input #password type="password" class="form-control" [(ngModel)]="usuario.password" name = "password">
                     </div>
-                    <button style="margin-top: 10px; margin-left: 30px;" class="btn btn-danger" (click)="IniciarSesion()" >Iniciar Sesion</button>
-                    <button [routerLink]="['']" style="margin-top: 10px; margin-left: 30px;" class="btn btn-danger">Volver al Inicio</button>
+                    <button  (click)="IniciarSesion(nombre.value, password.value)" style="margin-top: 10px; margin-left: 30px;" class="btn btn-primary" >Iniciar Sesion</button>
+                    <button [routerLink]="['']" style="margin-top: 10px; margin-left: 30px;" class="btn btn-primary">Volver al Inicio</button>
                 </form>
         </div>
 </div>

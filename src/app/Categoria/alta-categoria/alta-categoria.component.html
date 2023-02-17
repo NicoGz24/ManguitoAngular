@@ -9,9 +9,13 @@
     <br>
     <h5>Nombre de la nueva categoria</h5>
     <input  class="form-control me-2"type="text" [(ngModel)]="categoria.nombre" placeholder='nombre ' name="nombre">
+    <br>
     <h5>Escriba una breve descripcion</h5>
     <input class="form-control me-2"type="text" [(ngModel)]="categoria.descripcion" placeholder='descripcion ' name="descripcion">
-    <button (click)="AltaCategoria(categoria)" class="btn btn-primary" style="align-content: center; margin-top: 10px;">Guardar cambios</button>
+    <div class="div_buttons" style="align-items: center;margin-top: 10px;">
+        <button (click)="AltaCategoria(categoria)" class="btn btn-primary" style="margin-right: 10px;">Guardar cambios</button>
+        <button [routerLink]="['/panelAdministrador']" class="btn btn-primary" >Volver</button>
+    </div>
 </div>
 
 <app-footer></app-footer>

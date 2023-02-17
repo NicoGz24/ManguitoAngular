@@ -2,10 +2,10 @@ import { Emprendimiento } from "./Emprendimiento";
 
 export class Usuario{
     id:number;
-    nombre:String;
-    email:String;
+    nombre:string;
+    email:string;
     esAdmin: boolean = false;
-    password:String;
+    password:string;
     emprendimiento:Emprendimiento;
     constructor(){}
 

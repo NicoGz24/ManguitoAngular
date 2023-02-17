@@ -11,18 +11,25 @@ import { Usuario } from 'src/app/Modelo/Usuario';
 export class LoginComponent {
   
   usuario:Usuario=new Usuario();
-  nombreUsuario:string;
-  password:string;
   constructor(private service:ServicioService, private router:Router){
   }
   
   ngOnInit(){}
 
 
-  IniciarSesion(){
-    this.service.loginUsuario(this.nombreUsuario,this.password).subscribe(data=>{this.usuario = data});
-    console.log("datos del usuario "+ this.usuario.nombre);
-    this.router.navigate(["panelAdministrador"]);
+  IniciarSesion(nombre:string, password:string){
+    this.service.loginUsuario(nombre,password).subscribe(data=>{this.usuario=data
+    console.log("datos del usuario ", this.usuario.email);
+    if(this.usuario.esAdmin==true){
+      this.router.navigate(["panelAdministrador"])
+    }
+    else{
+    if(this.usuario.esAdmin==false){
+      this.router.navigate(["panelUsuario"])}
+    else{
+      alert('Usuario o contraseña incorrectos')}
+  }
+  });
   }
 
 }

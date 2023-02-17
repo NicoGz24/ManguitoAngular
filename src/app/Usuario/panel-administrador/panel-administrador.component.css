@@ -1,20 +1,24 @@
 .container{
-    height: 450px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: brown;
+    /* background-color: brown; */
 }
 
 .card{
     display: flex;
-    height: 300px;
+    height: 250px;
     width: 18rem;
     /*background-color: aqua;*/
     margin-left: 10px;
     margin-top: 0%;
+    
 }
 
-.card-body{
-   background-color: burlywood;
+.div-button{
+    align-items: baseline;
+    margin-right: 10px;
+    /* background-color: burlywood; */
 }
+
