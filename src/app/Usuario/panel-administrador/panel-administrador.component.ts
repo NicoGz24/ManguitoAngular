@@ -11,21 +11,21 @@ import { ServicioService } from 'src/app/Service/servicio.service';
 export class PanelAdministradorComponent {
   categorias: Categoria[];
 
-  constructor(private router:Router,private service:ServicioService){
-    this.service.getCategorias().subscribe(data=>{this.categorias=data})
+  constructor(private router: Router, private service: ServicioService) {
+    this.service.getCategorias().subscribe(data => { this.categorias = data })
   }
 
 
-  EditarCategoria(categoria:Categoria){
-    this.router.navigate(['editarCategoria',categoria.nombre]);
+  EditarCategoria(categoria: Categoria) {
+    this.router.navigate(['editarCategoria', categoria.nombre]);
   }
 
-  AltaCategoria(){
+  AltaCategoria() {
     this.router.navigate(['altaCategoria']);
   }
 
-  EliminarCategoria(categoria:Categoria){
-    this.service.eliminarCategoria(categoria.id).subscribe(data => {alert('Categoria eliminada')})
+  EliminarCategoria(categoria: Categoria) {
+    this.service.eliminarCategoria(categoria.id).subscribe(data => { alert('Categoria eliminada') })
     this.router.navigate(['panelAdministrador'])
   }
 }

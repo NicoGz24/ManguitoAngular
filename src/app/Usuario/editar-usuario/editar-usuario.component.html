@@ -1,1 +1,26 @@
-<p>editar-usuario works!</p>
+<app-navbar></app-navbar>
+
+<div class="card">
+    <div class="card-head">
+        <h3>Bienvenido {{usuario.nombre}}</h3>
+        <h5>Desde este panel podra editar los datos de su perfil</h5>
+    </div>
+    <div class="card-body">
+        <form action="">
+            <div class="form-group" aria-required="true">
+                <label class="form-label" >Nombre de Usuario</label>
+                <input [(ngModel)]="usuario.nombre" type="text" class="form-control" placeholder="{{usuario.nombre}}" name = "nombre" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" >Email</label>
+                <input  [(ngModel)]="usuario.email" type="text" class="form-control"  placeholder="{{usuario.email}}" name = "email" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Constraseña</label>
+                <input  [(ngModel)]="usuario.password" type="password" class="form-control"  name = "password" required>
+            </div>
+            <button (click)="ActualizarUsuario()" style="margin-top: 10px; margin-left: 30px;" class="btn btn-danger" type="submit">Actualizar</button>
+            <button [routerLink]="['/panelUsuario',usuario.id]" style="margin-top: 10px; margin-left: 30px;" class="btn btn-danger">Volver</button>
+        </form>
+    </div>
+</div>

@@ -23,7 +23,6 @@ export class EditarCategoriaComponent {
   }
 
   EditarCategoria(){
-    console.log('nombre = ',this.categoria.nombre)
     this.service.actualizarCategoria(this.categoria).subscribe(data=>{alert('La categoria fue actualizada con exito')})
   }
 

@@ -1,1 +1,20 @@
 <app-navbar></app-navbar>
+<h1 style="text-align: center; padding: 2%; font-family: cursive;" >{{categoria.nombre}}</h1>
+
+<div class="container">
+        <img src= {{categoria.imagen}}  class="imagen_categoria" alt="...">
+</div>
+
+<h3 style="text-align: center; padding: 2%; font-family: cursive;" >Emprendimientos de la categoria</h3>
+<div class="container">
+    <div class="card border-dark" *ngFor="let emprendimiento of emprendimientos" >
+            <img [routerLink]="['/verEmprendimiento',emprendimiento.nombre]" src={{emprendimiento.banner}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6 class="card-title" style="text-align: center;">{{emprendimiento.nombre}}</h6>
+            </div>
+    </div>
+</div>
+
+<app-footer-categoria></app-footer-categoria>
+
+<app-footer></app-footer>

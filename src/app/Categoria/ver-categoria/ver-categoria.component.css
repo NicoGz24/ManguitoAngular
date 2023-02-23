@@ -1,0 +1,28 @@
+.container{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: brown; */
+}
+
+.imagen_categoria{
+    height: 80%;
+    background-color: aqua;
+}
+
+.card{
+    display: flex;
+    height: 250px;
+    width: 18rem;
+    /*background-color: aqua;*/
+    margin-left: 10px;
+    margin-top: 0%;
+    
+}
+
+.div-button{
+    align-items: baseline;
+    margin-right: 10px;
+    /* background-color: burlywood; */
+}

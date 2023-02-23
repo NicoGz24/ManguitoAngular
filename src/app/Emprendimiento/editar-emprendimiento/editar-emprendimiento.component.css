@@ -1,0 +1,23 @@
+
+.main{
+    display: flex;
+}
+.container_categorias{
+    margin-left: 50px;  
+}
+
+.button_eliminar{
+    margin-top: 20%;
+}
+
+.container{
+    height: 800px;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+    /* background-color: brown;  */
+    margin-bottom: 20px;
+}
+.card-img-top{
+    height: 450px;
+}

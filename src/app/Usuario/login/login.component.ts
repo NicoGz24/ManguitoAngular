@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ServicioService } from '../../Service/servicio.service';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/Modelo/Usuario';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { Usuario } from 'src/app/Modelo/Usuario';
 })
 export class LoginComponent {
   mensajeError: string;
+  error: boolean = false;
   usuario: Usuario = new Usuario();
   constructor(private service: ServicioService, private router: Router) {
   }
@@ -17,22 +19,20 @@ export class LoginComponent {
   ngOnInit() { }
 
 
-  IniciarSesion(nombre: string, password: string) {
+  login(form: NgForm) {
+    const nombre = form.value.nombre;
+    const password = form.value.password;
     this.service.loginUsuario(nombre, password).subscribe(data => {
       this.usuario = data;
       if (this.usuario.esAdmin == true) {
-        this.router.navigate(["panelAdministrador"])
+        this.router.navigate(["panelAdministrador"]);
       }
-      else {
+      else
         if (this.usuario.esAdmin == false) {
-          this.router.navigate(["/panelUsuario", this.usuario.id])
-        }
-        else {
-          console.log(this.mensajeError)
-          this.mensajeError = 'Usuario o contraseña incorrectos'
-        }
-      }
-    });
+        this.router.navigate(["/panelUsuario", this.usuario.id]);
+      }   
+    },
+    err =>alert('Los datos ingresados no son validos'))
   }
 
 }

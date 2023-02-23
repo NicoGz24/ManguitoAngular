@@ -1,3 +1,31 @@
 <app-navbar></app-navbar>
 
-<h1>Emprendimiento {{emprendimiento.nombre}}</h1>
+<h1 style="text-align: center; padding: 2%; font-family: cursive;" >{{emprendimiento.nombre}}</h1>
+
+<main class="main">
+    <div class="container_categorias">
+        <h4>Categorias</h4>
+        <div class="form-check form-switch" *ngFor="let categoria of categorias">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">{{categoria.nombre}}</label>
+        </div>
+        <div class="button_eliminar">
+            <button class="btn btn-danger" (click)="EliminarEmprendimiento()" >Eliminar Emprendimiento</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <img src={{emprendimiento.banner}} class="card-img-top" alt="...">
+        <h5>Url de la portada</h5>
+        <input class="form-control me-2" [(ngModel)]="emprendimiento.banner" type="text"  name="url_imagen" >
+        <h5>Nombre del emprendimiento</h5>
+        <input  class="form-control me-2"type="text" [(ngModel)]="emprendimiento.nombre" placeholder='nombre'  name="nombre">
+        <h5>Descripcion</h5>
+        <input class="form-control me-2"type="text" [(ngModel)]="emprendimiento.descripcion" placeholder='descripcion' name="descripcion">
+        <h5>Sitio web o dominio</h5>
+        <input class="form-control me-2"type="text" [(ngModel)]="emprendimiento.url" placeholder='url' name="url">
+        <button (click)="EditarEmprendimiento()" class="btn btn-primary" type="submit" style="align-content: center; margin-top: 10px; margin-right: 10px;">Guardar cambios</button>
+        <button [routerLink]="['/panelUsuario',idUsuario]" class="btn btn-primary" style="align-content: center; margin-top: 10px;">Volver</button>
+    </div>
+</main>
+<app-footer></app-footer>

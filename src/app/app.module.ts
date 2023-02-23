@@ -16,7 +16,7 @@ import { EditarCategoriaComponent } from './Categoria/editar-categoria/editar-ca
 import { EliminarCategoriaComponent } from './Categoria/eliminar-categoria/eliminar-categoria.component';
 import { VerCategoriaComponent } from './Categoria/ver-categoria/ver-categoria.component';
 import { VerEmprendimientoComponent } from './Emprendimiento/ver-emprendimiento/ver-emprendimiento.component';
-import{FormsModule} from '@angular/forms';
+import{FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServicioService } from './Service/servicio.service';
 import{HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
@@ -26,7 +26,8 @@ import { ComprarPlanComponent } from './Usuario/comprar-plan/comprar-plan.compon
 import { PanelAdministradorComponent } from './Usuario/panel-administrador/panel-administrador.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { PanelUsuarioComponent } from './Usuario/panel-usuario/panel-usuario.component'
+import { PanelUsuarioComponent } from './Usuario/panel-usuario/panel-usuario.component';
+import { FooterCategoriaComponent } from './Categoria/footer-categoria/footer-categoria.component'
 
 @NgModule({
   declarations: [
@@ -51,13 +52,15 @@ import { PanelUsuarioComponent } from './Usuario/panel-usuario/panel-usuario.com
     PanelAdministradorComponent,
     NavbarComponent,
     FooterComponent,
-    PanelUsuarioComponent
+    PanelUsuarioComponent,
+    FooterCategoriaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ServicioService],
   bootstrap: [AppComponent]

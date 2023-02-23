@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AltaCategoriaComponent } from './Categoria/alta-categoria/alta-categoria.component';
 import { EditarCategoriaComponent } from './Categoria/editar-categoria/editar-categoria.component';
 import { EliminarCategoriaComponent } from './Categoria/eliminar-categoria/eliminar-categoria.component';
+import { FooterCategoriaComponent } from './Categoria/footer-categoria/footer-categoria.component';
 import { VerCategoriaComponent } from './Categoria/ver-categoria/ver-categoria.component';
 import { EditarEmprendimientoComponent } from './Emprendimiento/editar-emprendimiento/editar-emprendimiento.component';
 import { EliminarEmprendimientoComponent } from './Emprendimiento/eliminar-emprendimiento/eliminar-emprendimiento.component';
@@ -27,17 +28,18 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'navbar',component:NavbarComponent},
   {path:'footer', component:FooterComponent},
+  {path:'footerCategoria', component:FooterCategoriaComponent},
   {path:'listarEmprendimientos', component:ListarEmprendimientosComponent},
   {path:'login', component:LoginComponent},
   {path:'altaUsuario', component:AltaUsuarioComponent},
   {path:'verEmprendimiento/:nombre', component:VerEmprendimientoComponent},
-  {path:'verCategoria/:categoria', component:VerCategoriaComponent},
+  {path:'verCategoria/:idCategoria', component:VerCategoriaComponent},
   {path:'nuevoEmprendimiento/:idUsuario', component:NuevoEmprendimientoComponent},
   {path:'altaCategoria', component:AltaCategoriaComponent},
   {path:'editarUsuario/:idUsuario', component:EditarUsuarioComponent},
   {path:'panelUsuario/:idUsuario' , component:PanelUsuarioComponent},
   {path:'panelAdministrador',component:PanelAdministradorComponent},
-  {path:'editarEmprendimiento/:idEmprendimiento', component:EditarEmprendimientoComponent},
+  {path:'editarEmprendimiento/:idUsuario', component:EditarEmprendimientoComponent},
   {path:'editarCategoria/:nombre', component:EditarCategoriaComponent},
   {path:'listarUsuarios', component:ListarUsuariosComponent},
   {path:'eliminarEmprendimiento', component:EliminarEmprendimientoComponent},

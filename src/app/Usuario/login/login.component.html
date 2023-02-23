@@ -4,18 +4,17 @@
         <h3>Login de Usuario</h3>
     </div>
         <div class="card-body">
-            <h3 *ngIf="">{{mensajeError}}</h3>
-                <form action="">
+               
+                <form  class="form-group" #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
                     <div class="form-group">
                         <label>Nombre de Usuario</label>
-                        <input #nombre type="text" class="form-control" name = "nombre" required>
+                        <input type="text" class="form-control" name = "nombre" ngModel>
                     </div>
                     <div class="form-group">
                         <label>Constraseña</label>
-                        <input #password type="password" class="form-control" name = "password" required>
+                        <input type="password" class="form-control" name = "password" ngModel>
                     </div>
-                    <button  (click)="IniciarSesion(nombre.value, password.value)" style="margin-top: 10px; margin-left: 30px;" class="btn btn-primary" >Iniciar Sesion</button>
-                    
+                    <button type="submit" style="margin-top: 10px; margin-left: 30px;" class="btn btn-primary" >Iniciar Sesion</button>
                     <button [routerLink]="['']" style="margin-top: 10px; margin-left: 30px;" class="btn btn-primary">Volver al Inicio</button>
                 </form>
         </div>

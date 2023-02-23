@@ -1,28 +1,34 @@
 <app-navbar></app-navbar>
-
-<h1 style="text-align: center; font-family: cursive;">Hola {{usuario.nombre}} </h1>
-
+<br>
+<br>
+<h1 style="text-align: center; font-family: cursive; margin-top:70px;">Hola {{usuario.nombre}} </h1>
+<br>
+<br>
+<div class="parrafo">
+    <h4>Bienvenido al panel del usuario. Desde este sector podras acceder a los datos de tu perfil, como asi tambien la posibilidad de crear tu emprendimiento o editar los datos del mismo.</h4>
+</div>
 <div class="container">
-    <div class="card border-dark" >
+    <div *ngIf="existeEmpre==false" class="card" >
         <img  (click)="NuevoEmprendimiento()" src="https://campusdesegovia.uva.es/wp-content/uploads/2020/03/CATEGORIA-DESDE-CASA.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h6 class="card-title" style="text-align: center;">Nuevo Emprendimiento</h6>
         </div>
     </div>
-    <div class="card border-dark" >
-        <img (click)="EditarEmprendimiento()" src="https://campusdesegovia.uva.es/wp-content/uploads/2020/03/CATEGORIA-DESDE-CASA.jpg" class="card-img-top" alt="...">
+
+    <div *ngIf="existeEmpre" class="card " >
+        <img (click)="EditarEmprendimiento()" src="{{emprendimiento.banner}}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h6 class="card-title" style="text-align: center;">Editar Emprendimiento</h6>
+            <h6 class="card-title" style="text-align: center; font-family: cursive;">{{emprendimiento.nombre}}</h6>
         </div>
     </div>
-    <div class="card border-dark" >
-        <img (click)="EditarPerfil()" src="https://campusdesegovia.uva.es/wp-content/uploads/2020/03/CATEGORIA-DESDE-CASA.jpg" class="card-img-top" alt="...">
+    <div class="card " >
+        <img (click)="EditarPerfil()" src="/assets/img/EditarPerfil.gif" class="card-img-top" alt="...">
         <div class="card-body">
-            <h6 class="card-title" style="text-align: center;" >Editar Perfil</h6>
+            <h6 class="card-title" style="text-align: center; font-family: cursive;" ></h6>
         </div>
     </div>
 </div>
 
-
+<app-footer-categoria></app-footer-categoria>
 
 <app-footer></app-footer>

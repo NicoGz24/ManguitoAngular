@@ -11,7 +11,7 @@
   <aside class="aside_recaudacion">
       <button style="margin-top: 10px;" class="btn btn-outline-success me-md-2">Posteos</button>
       <div class="tabla_donaciones">
-        <app-ver-donaciones></app-ver-donaciones>
+        <app-ver-donaciones [emprendimiento]="emprendimiento"></app-ver-donaciones>
       </div>
       <button (click)="DonarManguitos()" style="margin-bottom: 10px;" class="btn btn-outline-success me-md-2">Donar Manguitos</button>
       <button style="margin-bottom: 10px;" class="btn btn-outline-success me-md-2">Ver planes disponibles</button>
@@ -32,10 +32,6 @@
   </section>
 </main>
 
-<section class="section_categorias">
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button *ngFor="let categoria of categorias" type="button" class="btn btn-primary">{{categoria.nombre}}</button>
-    </div>
-  </section>
+<app-footer-categoria></app-footer-categoria>
   
 <app-footer></app-footer>

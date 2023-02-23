@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Usuario } from '../Modelo/Usuario';
 import { Emprendimiento } from '../Modelo/Emprendimiento';
 import { Categoria } from '../Modelo/Categoria';
+import { Donacion } from '../Modelo/Donacion';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,8 @@ export class ServicioService {
 
   Url='http://localhost:8080/ttps-spring';
 
+
+    //**********SERVICIOS DEL USUARIO**************
 
   loginUsuario(usuario:string, contraseña:string){
     let body = new HttpParams();
@@ -42,20 +45,18 @@ export class ServicioService {
     return this.http.delete<Usuario>(this.Url+"/usuario/eliminarUsuario"+"?idUsuario="+usuario.id)
   }
 
+  altaEmprendimiento(idUsuario:number, empre:Emprendimiento){
+    return this.http.post<Emprendimiento>(this.Url+"/usuario/registrarEmprendimiento"+"?idUsuario="+idUsuario,empre);
+  }
+
+  //**********SERVICIOS DEL EMPRENDIMIENTO**************
+
   getEmprendimientos(){
     return this.http.get<Emprendimiento[]>(this.Url+"/Emprendimiento/listarEmprendimientos")
   }
 
-  getCategorias(){
-    return this.http.get<Categoria[]>(this.Url+"/Categoria/listarCategorias")
-  }
-
-  getCategoriaNombre(nombre:String){
-    return this.http.get<Categoria>(this.Url+"/Categoria/buscarCategoriaPorNombre"+"?nombre="+nombre)
-  }
-
-  altaDeCategoria(categoria:Categoria){
-    return this.http.post<Categoria>(this.Url + "/usuario/altaCategoria",categoria)
+  getEmprendimientosPorCategoria(idCategoria:number){
+    return this.http.get<Emprendimiento[]>(this.Url+"/Emprendimiento/filtrarEmprendimientosPorCategoria"+"?idCategoria="+idCategoria);
   }
 
   getEmprendimientoPorIdUsuario(idUsuario:number){
@@ -70,12 +71,42 @@ export class ServicioService {
     return this.http.get<Emprendimiento>(this.Url+"/Emprendimiento/buscarEmprendimiento"+"?idEmprendimiento="+idEmprendimiento)
   }
 
+  actualizarEmprendimiento(emprendimiento:Emprendimiento){
+    return this.http.put<Emprendimiento>(this.Url+"/Emprendimiento/actualizarEmprendimiento",emprendimiento)
+  }
+
+  verDonacionesEmprendimiento(idEmprendimiento:number){
+    return this.http.get<Donacion[]>(this.Url+"/Emprendimiento/verDonacionesEmprendimiento"+"?idEmprendimiento="+idEmprendimiento)
+  }
+
+  eliminarEmprendimiento(idEmprendimiento:number){
+    return this.http.delete<Emprendimiento>(this.Url+"/Emprendimiento/eliminarEmprendimiento"+"?idEmprendimiento="+idEmprendimiento)
+  }
+
+//**********SERVICIOS DE CATEGORIA**************
+
   actualizarCategoria(categoria:Categoria){
     return this.http.put<Categoria>(this.Url+"/Categoria/actualizarCategoria",categoria)
   }
 
+  recuperarCategoriaId(idCategoria:number){
+    return this.http.get<Categoria>(this.Url+"/Categoria/recuperarCategoriaId"+"?idCategoria="+idCategoria)
+  }
+
   eliminarCategoria(idCategoria:number){
     return this.http.delete<Categoria>(this.Url+"/Categoria/eliminarCategoria"+"?idCategoria="+idCategoria)
+  }
+
+  getCategorias(){
+    return this.http.get<Categoria[]>(this.Url+"/Categoria/listarCategorias")
+  }
+
+  getCategoriaNombre(nombre:String){
+    return this.http.get<Categoria>(this.Url+"/Categoria/buscarCategoriaPorNombre"+"?nombre="+nombre)
+  }
+
+  altaDeCategoria(categoria:Categoria){
+    return this.http.post<Categoria>(this.Url + "/usuario/altaCategoria",categoria)
   }
 
 }

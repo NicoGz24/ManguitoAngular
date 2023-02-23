@@ -7,14 +7,14 @@
             <table class="table table-hover">
                 <thead>
                     <tr class="text-center">
-                        <th>Manguitos</th>
-                        <th>Planes</th>
+                        <th>Mensaje del donador</th>
+                        <th>Manguitos donados</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let donacion " class="text-center">
-                        <td>{{donacion.cantiManguitos}}</td>
-                        <td>{{donacion.cantPlanes}}</td>
+                    <tr *ngFor="let donacion of donaciones " class="text-center">
+                        <td>{{donacion.mensaje}}</td>
+                        <td>{{donacion.valor}}</td>
                     </tr>
                 </tbody>
             </table>
