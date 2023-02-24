@@ -30,6 +30,9 @@ export class EditarUsuarioComponent {
 
 
   ActualizarUsuario(){
+    this.usuario.nombre = this.form.value.nombre;
+    this.usuario.email = this.form.value.email;
+    this.usuario.password = this.form.value.password;
     this.service.actualizarUsuario(this.usuario).subscribe(data =>{alert('Usuario actualizado con exito')},err=>{alert('Datos ingresados invalidos')})
   }
 

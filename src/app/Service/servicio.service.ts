@@ -75,6 +75,10 @@ export class ServicioService {
     return this.http.put<Emprendimiento>(this.Url+"/Emprendimiento/actualizarEmprendimiento",emprendimiento)
   }
 
+  actualizarCategoriasDelEmprendimiento(idEmprendimiento:number, categorias:Categoria[]){
+    return this.http.put<Emprendimiento>(this.Url+"/Emprendimiento/actualizarCategoriasDelEmprendimiento"+"?idEmprendimiento="+idEmprendimiento,categorias)
+  }
+
   verDonacionesEmprendimiento(idEmprendimiento:number){
     return this.http.get<Donacion[]>(this.Url+"/Emprendimiento/verDonacionesEmprendimiento"+"?idEmprendimiento="+idEmprendimiento)
   }

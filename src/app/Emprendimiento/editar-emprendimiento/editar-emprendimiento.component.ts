@@ -12,8 +12,8 @@ import { ServicioService } from 'src/app/Service/servicio.service';
   styleUrls: ['./editar-emprendimiento.component.css']
 })
 export class EditarEmprendimientoComponent {
-  categorias: Categoria[];
-  categoriasEdit: Categoria[];
+  categorias: Categoria[] = new Array();
+  categoriasEdit: Categoria[] = new Array();
   emprendimiento: Emprendimiento = new Emprendimiento();
   idEmprendimiento: any;
   idUsuario: any;
@@ -42,11 +42,22 @@ export class EditarEmprendimientoComponent {
     this.emprendimiento.banner = this.form.value.banner;
     this.emprendimiento.descripcion = this.form.value.descripcion;
     this.emprendimiento.url = this.form.value.url;
-    this.service.actualizarEmprendimiento(this.emprendimiento).subscribe(data => { alert('Se actualizo el emprendimiento con exito') }, err=>{alert('Datos ingresados invalidos')})
+    this.service.actualizarEmprendimiento(this.emprendimiento).subscribe(data => { alert('Se actualizo el emprendimiento con exito') }, err=>{alert('Datos ingresados invalidos')});
+    this.service.actualizarCategoriasDelEmprendimiento(this.emprendimiento.id, this.categoriasEdit).subscribe();
   }
 
   EliminarEmprendimiento(){
-    this.service.eliminarEmprendimiento(this.idEmprendimiento).subscribe(data=>{ alert('Emprendimiento eliminado'),this.router.navigate(["/panelUsuario",this.idUsuario]) })
+    this.service.eliminarEmprendimiento(this.idEmprendimiento).subscribe(data=>{ 
+      alert('Emprendimiento eliminado'),
+      this.router.navigate(["/panelUsuario",this.idUsuario]) })
+  }
+
+  SeleccionDeCategoria(e:any, categoria:Categoria){
+    if(e.target.checked)
+    {
+        this.categoriasEdit.push(categoria)
+        console.log(categoria.nombre)
+    }
   }
 
   }

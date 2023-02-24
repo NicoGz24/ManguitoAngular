@@ -6,7 +6,7 @@
     <div class="container_categorias">
         <h4>Categorias</h4>
         <div class="form-check form-switch" *ngFor="let categoria of categorias">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <input class="form-check-input" (change)="SeleccionDeCategoria($event,categoria)" type="checkbox" role="switch" id="flexSwitchCheckDefault">
             <label class="form-check-label" for="flexSwitchCheckDefault">{{categoria.nombre}}</label>
         </div>
         <div class="button_eliminar">
@@ -19,16 +19,19 @@
             <img src={{emprendimiento.banner}} class="card-img-top" alt="...">
             
             <h5>Url de la portada</h5>
-            <input class="form-control me-2"  formControlName="banner" placeholder={{emprendimiento.banner}} type="text"  id="banner" >
+            <input class="form-control me-2"  formControlName="banner"  type="text"  id="banner" >
             
             <h5>Nombre del emprendimiento</h5>
-            <input  class="form-control me-2"type="text"  formControlName="nombre" placeholder={{emprendimiento.nombre}}  id="nombre">
-            
+            <label for="formGroupExampleInput" class="form-label">{{emprendimiento.nombre}}</label>
+            <input  class="form-control me-2"type="text"  formControlName="nombre"   id="nombre">
+
             <h5>Descripcion</h5>
-            <input class="form-control me-2"type="text"  formControlName="descripcion" placeholder={{emprendimiento.descripcion}} id="descripcion">
+            <label for="formGroupExampleInput" class="form-label">{{emprendimiento.descripcion}}</label>
+            <input class="form-control me-2"type="text"  formControlName="descripcion"  id="descripcion">
             
             <h5>Sitio web o dominio</h5>
-            <input class="form-control me-2"type="text"  formControlName="url" placeholder={{emprendimiento.url}} id="url">
+            <label for="formGroupExampleInput" class="form-label">{{emprendimiento.url}}</label>
+            <input class="form-control me-2"type="text"  formControlName="url"  id="url">
             
             <button [disabled]="form.invalid" class="btn btn-primary" type="submit" style="align-content: center; margin-top: 10px; margin-right: 10px;">Guardar cambios</button>
             <button [routerLink]="['/panelUsuario',idUsuario]" class="btn btn-primary" style="align-content: center; margin-top: 10px;">Volver</button>
