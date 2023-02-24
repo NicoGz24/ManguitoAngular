@@ -25,7 +25,7 @@ export class PanelAdministradorComponent {
   }
 
   EliminarCategoria(categoria: Categoria) {
-    this.service.eliminarCategoria(categoria.id).subscribe(data => { alert('Categoria eliminada') })
-    this.router.navigate(['panelAdministrador'])
+    this.service.eliminarCategoria(categoria.id).subscribe(data => { alert('Categoria eliminada'),this.router.navigate(['panelAdministrador']) })
+    
   }
 }

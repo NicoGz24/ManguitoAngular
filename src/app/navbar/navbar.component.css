@@ -11,3 +11,11 @@
     width: 50%;
     justify-content: left;
 }
+.nav_buttons{
+    /* background-color: chartreuse;*/
+     width: 50%;
+     height: 70px;
+     display: flex;
+     justify-content: right;
+     align-items: center;
+ }

@@ -1,25 +1,25 @@
-<app-navbar></app-navbar>
+<app-navbar [sesion]="idUsuario"></app-navbar>
 
 <div class="card">
     <div class="card-head">
-        <h3>Bienvenido {{usuario.nombre}}</h3>
-        <h5>Desde este panel podra editar los datos de su perfil</h5>
+        <h3>Bienvenid@ {{usuario.nombre}}</h3>
+        <h5>Desde este panel podras editar los datos de tu perfil</h5>
     </div>
     <div class="card-body">
-        <form action="">
-            <div class="form-group" aria-required="true">
+        <form [formGroup]="form" (submit)="ActualizarUsuario()">
+            <div class="form-group" >
                 <label class="form-label" >Nombre de Usuario</label>
-                <input [(ngModel)]="usuario.nombre" type="text" class="form-control" placeholder="{{usuario.nombre}}" name = "nombre" required>
+                <input  type="text" class="form-control" formControlName="nombre" placeholder="{{usuario.nombre}}" id = "nombre" >
             </div>
             <div class="form-group">
                 <label class="form-label" >Email</label>
-                <input  [(ngModel)]="usuario.email" type="text" class="form-control"  placeholder="{{usuario.email}}" name = "email" required>
+                <input type="text" class="form-control"  formControlName="email" placeholder="{{usuario.email}}" id = "email" >
             </div>
             <div class="form-group">
                 <label class="form-label">Constraseña</label>
-                <input  [(ngModel)]="usuario.password" type="password" class="form-control"  name = "password" required>
+                <input type="password" class="form-control" formControlName="password" id = "password" >
             </div>
-            <button (click)="ActualizarUsuario()" style="margin-top: 10px; margin-left: 30px;" class="btn btn-danger" type="submit">Actualizar</button>
+            <button [disabled]="form.invalid" style="margin-top: 10px; margin-left: 30px;" class="btn btn-danger" type="submit">Actualizar</button>
             <button [routerLink]="['/panelUsuario',usuario.id]" style="margin-top: 10px; margin-left: 30px;" class="btn btn-danger">Volver</button>
         </form>
     </div>

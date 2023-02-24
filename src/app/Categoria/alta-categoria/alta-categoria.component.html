@@ -1,21 +1,26 @@
-<app-navbar></app-navbar>
+<app-navbar [sesion]="1"></app-navbar>
 
 <h1 style="text-align: center; padding: 2%; font-family: cursive;" >Datos de la nueva Categoria</h1>
-<div class="container">
-    <h4 style="margin-left: 200px;">Portada</h4>
-    <img src={{categoria.imagen}} class="card-img-top" alt="...imagen no encontrada">
-    <h5>Ingrese la url de la imagen que utilizara como portada</h5>
-    <input class="form-control me-2" [(ngModel)]="categoria.imagen" type="text" placeholder="url_imagen" name="url_imagen" >
-    <br>
-    <h5>Nombre de la nueva categoria</h5>
-    <input  class="form-control me-2"type="text" [(ngModel)]="categoria.nombre" placeholder='nombre ' name="nombre">
-    <br>
-    <h5>Escriba una breve descripcion</h5>
-    <input class="form-control me-2"type="text" [(ngModel)]="categoria.descripcion" placeholder='descripcion ' name="descripcion">
-    <div class="div_buttons" style="align-items: center;margin-top: 10px;">
-        <button (click)="AltaCategoria(categoria)" class="btn btn-primary" style="margin-right: 10px;">Guardar cambios</button>
-        <button [routerLink]="['/panelAdministrador']" class="btn btn-primary" >Volver</button>
+<form [formGroup]="form" (submit)="AltaCategoria()">
+    <div class="container">
+        <h4 style="margin-left: 200px;">Portada</h4>
+        <img src={{categoria.imagen}} class="card-img-top" alt="...imagen no encontrada">
+        
+        <h5>Ingrese la url de la imagen que utilizara como portada</h5>
+        <input class="form-control me-2" type="text" formControlName="imagen" id="imagen" >
+        <br>
+        
+        <h5>Nombre de la nueva categoria</h5>
+        <input  class="form-control me-2"type="text" formControlName="nombre"  id="nombre">
+        <br>
+        
+        <h5>Escriba una breve descripcion</h5>
+        <input class="form-control me-2"type="text" formControlName="descripcion"   id="descripcion">
+        
+        <div class="div_buttons" style="align-items: center;margin-top: 10px;">
+            <button [disabled]="form.invalid" type="submit" class="btn btn-primary" style="margin-right: 10px;">Crear Categoria</button>
+            <button [routerLink]="['/panelAdministrador']" class="btn btn-primary" >Volver</button>
+        </div>
     </div>
-</div>
-
+</form>
 <app-footer></app-footer>
